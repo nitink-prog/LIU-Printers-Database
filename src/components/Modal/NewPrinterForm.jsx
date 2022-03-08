@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useFetch } from "../../hooks/useFetch";
 
 export default function NewPrinterForm({ url, setUrl }) {
   const [ipaddress, setIpAddress] = useState("100");

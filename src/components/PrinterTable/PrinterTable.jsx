@@ -1,6 +1,6 @@
 import "./PrinterTable.css";
 
-export default function PrinterTable({ printers, updater, setUpdater }) {
+export default function PrinterTable({ printers }) {
   return (
     <div className="printer-table">
       <table>
