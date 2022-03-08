@@ -56,7 +56,7 @@ export default function NewPrinterForm({ url, setUrl }) {
       setUrl((url = new String(url)));
     };
     postData();
-
+    resetForm();
     // add success text
   };
 
