@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 export default function TableFilters({ url, setUrl }) {
   const [buildingFilter, setBuildingFilter] = useState("");
-  const [showAdvanced, setShowAdvanced] = useState(false);
 
   const handleChangeBuildingFilter = (e) => {
     setBuildingFilter(e.target.value);
@@ -25,12 +24,6 @@ export default function TableFilters({ url, setUrl }) {
           <option value="?building=S">S - Sloan</option>
         </select>
       </label>
-      {!showAdvanced && (
-        <button onClick={() => setShowAdvanced(true)}>Show Advanced</button>
-      )}
-      {showAdvanced && (
-        <button onClick={() => setShowAdvanced(false)}>Hide Advanced</button>
-      )}
     </>
   );
 }

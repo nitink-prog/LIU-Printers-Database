@@ -1,19 +1,35 @@
+import { useState } from "react";
+import Modal from "../Modal/Modal";
 import "./PrinterTable.css";
 
 export default function PrinterTable({ printers }) {
+  const [hideAdvanced, setHideAdvanced] = useState(true);
+
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+
+  const handleClickDelete = () => {
+    setShowDeleteModal(true);
+  };
+
   return (
     <div className="printer-table">
-      <table>
+      {hideAdvanced ? (
+        <button onClick={() => setHideAdvanced(false)}>Show Advanced</button>
+      ) : (
+        <button onClick={() => setHideAdvanced(true)}>Hide Advanced</button>
+      )}
+      <table id="displayTable">
         <thead>
           <tr>
             <th>IP Address</th>
             <th>Department</th>
             <th>Location</th>
             <th>Model</th>
-            <th>Name</th>
-            <th>MAC Address</th>
-            <th>Serial #</th>
-            <th>Date Updated</th>
+            <th hidden={hideAdvanced}>Name</th>
+            <th hidden={hideAdvanced}>MAC Address</th>
+            <th hidden={hideAdvanced}>Serial #</th>
+            <th hidden={hideAdvanced}>Date Updated</th>
+            <th>Modify</th>
           </tr>
         </thead>
         <tbody>
@@ -26,10 +42,20 @@ export default function PrinterTable({ printers }) {
                   {printer.building} {printer.room}
                 </td>
                 <td>iR-ADV {printer.model}</td>
-                <td>{printer.adv.name}</td>
-                <td>{printer.adv.macaddress}</td>
-                <td>{printer.adv.serial}</td>
-                <td>{printer.adv.dateupdated}</td>
+                <td hidden={hideAdvanced}>{printer.adv.name}</td>
+                <td hidden={hideAdvanced}>{printer.adv.macaddress}</td>
+                <td hidden={hideAdvanced}>{printer.adv.serial}</td>
+                <td hidden={hideAdvanced}>{printer.adv.dateupdated}</td>
+                <td>
+                  <button>Edit</button>
+                  <button onClick={handleClickDelete}>Delete</button>
+                  {showDeleteModal && (
+                    <Modal handleClickClose={() => setShowDeleteModal(false)}>
+                      <h3>Are you sure you want to DELETE this printer?</h3>
+                      <p>IP Address: {printer.id}</p>
+                    </Modal>
+                  )}
+                </td>
               </tr>
             ))}
         </tbody>
