@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useFetch } from "../../hooks/useFetch";
 
 export default function NewPrinterForm({ url, setUrl }) {
   const [ipaddress, setIpAddress] = useState("100");
@@ -10,6 +11,11 @@ export default function NewPrinterForm({ url, setUrl }) {
   const [macaddress, setMacAddress] = useState("");
   const [serial, setSerial] = useState("");
   const [dateupdated, setDateUpdated] = useState("");
+
+  const { postData, data, error } = useFetch(
+    "http://localhost:3000/printers",
+    "POST"
+  );
 
   const resetForm = () => {
     setIpAddress("100");
@@ -39,23 +45,9 @@ export default function NewPrinterForm({ url, setUrl }) {
         dateupdated: dateupdated,
       },
     };
-    console.log(printer);
-
-    const postPrinter = {
-      method: "POST",
-      body: JSON.stringify(printer),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    console.log(postPrinter);
-
-    const postData = async () => {
-      const res = await fetch(url, postPrinter);
-      setUrl((url = new String(url)));
-    };
-    postData();
-    resetForm();
+    postData(printer);
+    // console.log(data, error); "null, could not fetch data"
+    // resetForm();
     // add success text
   };
 
@@ -89,8 +81,7 @@ export default function NewPrinterForm({ url, setUrl }) {
         <select
           required
           onChange={(e) => setBuilding(e.target.value)}
-          value={building}
-        >
+          value={building}>
           <option value="DEFAULT" disabled>
             Select...
           </option>
