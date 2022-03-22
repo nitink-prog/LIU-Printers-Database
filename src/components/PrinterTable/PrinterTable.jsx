@@ -11,6 +11,10 @@ export default function PrinterTable({ printers }) {
     setShowDeleteModal(true);
   };
 
+  const handleClickConfirm = (deleteId) => {
+    console.log(deleteId, "delete function");
+  };
+
   return (
     <div className="printer-table">
       {hideAdvanced ? (
@@ -51,8 +55,17 @@ export default function PrinterTable({ printers }) {
                   <button onClick={handleClickDelete}>Delete</button>
                   {showDeleteModal && (
                     <Modal handleClickClose={() => setShowDeleteModal(false)}>
-                      <h3>Are you sure you want to DELETE this printer?</h3>
-                      <p>IP Address: {printer.id}</p>
+                      <h3>Do you want to DELETE this printer?</h3>
+                      <p>IP Address: 172.18.111.{printer.id}</p>
+                      <p>
+                        Location: {printer.building} {printer.room}
+                      </p>
+                      <button onClick={() => setShowDeleteModal(false)}>
+                        NO
+                      </button>{" "}
+                      <button onClick={() => handleClickConfirm(printer.id)}>
+                        YES
+                      </button>
                     </Modal>
                   )}
                 </td>
