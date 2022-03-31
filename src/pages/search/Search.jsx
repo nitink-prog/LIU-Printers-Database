@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useTheme } from "../../hooks/useTheme";
-import RecipeList from "../../components/RecipeList";
+import PrinterList from "../../components/PrinterList";
 import { db } from "../../firebase/config";
 import "./Search.css";
 
 export default function Search() {
-  const [recipes, setRecipes] = useState(null);
+  const [printers, setPrinters] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(false);
 
@@ -28,7 +28,7 @@ export default function Search() {
         querySnapshot.forEach((doc) => {
           results.push({ id: doc.id, ...doc.data() });
         });
-        setRecipes(results);
+        setPrinters(results);
         setIsPending(false);
       })
       .catch((err) => {
@@ -36,7 +36,7 @@ export default function Search() {
         setError(err);
       });
     return () => {
-      setRecipes(null);
+      setPrinters(null);
     };
   }, [searchQuery]);
 
@@ -45,7 +45,7 @@ export default function Search() {
       <h2 className="page-title">Recipes including "{searchQuery}"</h2>
       {error && <p className="error">{error}</p>}
       {isPending && <p className="loading">Loading...</p>}
-      {recipes && <RecipeList recipes={recipes} />}
+      {printers && <PrinterList printers={printers} />}
     </div>
   );
 }

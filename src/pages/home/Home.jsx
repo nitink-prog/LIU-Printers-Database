@@ -1,26 +1,26 @@
 import { useState, useEffect } from "react";
-import RecipeList from "../../components/RecipeList";
+import PrinterList from "../../components/PrinterList";
 import { db } from "../../firebase/config";
 import "./Home.css";
 
 export default function Home() {
-  const [recipes, setRecipes] = useState(null);
+  const [printers, setPrinters] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     setIsPending(true);
-    const unSubscribe = db.collection("recipes").onSnapshot(
+    const unSubscribe = db.collection("printers").onSnapshot(
       (snapshot) => {
         if (snapshot.empty) {
           setIsPending(false);
-          setError("No recipes found!");
+          setError("No printers found!");
         } else {
           let results = [];
           snapshot.docs.forEach((doc) => {
             results.push({ id: doc.id, ...doc.data() });
           });
-          setRecipes(results);
+          setPrinters(results);
           setIsPending(false);
         }
       },
@@ -39,7 +39,7 @@ export default function Home() {
       {error && <p className="error">{error}</p>}
       {isPending && <p className="loading">Loading...</p>}
 
-      {recipes && <RecipeList recipes={recipes} />}
+      {printers && <PrinterList printers={printers} />}
     </div>
   );
 }

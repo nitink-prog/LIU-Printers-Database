@@ -10,10 +10,10 @@ export default function Navbar() {
     <div className={`navbar ${mode}`} style={{ background: color }}>
       <nav>
         <Link to="/" className="brand">
-          <h1>Recipe Directory</h1>
+          <h1>LIU Printers</h1>
         </Link>
         <Searchbar />
-        <Link to="/create" className="button">Create Recipe</Link>
+        <Link to="/create" className="button">Add Printer</Link>
       </nav>
     </div>
   );
