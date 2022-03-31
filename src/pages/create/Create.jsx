@@ -5,11 +5,15 @@ import { useTheme } from "../../hooks/useTheme";
 import "./Create.css";
 
 export default function Create() {
-  const [ipaddress, setIpaddress] = useState("");
-  const [method, setMethod] = useState("");
-  const [cookingTime, setCookingTime] = useState(0);
-  const [newIngredient, setNewIngredient] = useState("");
-  const [ingredients, setIngredients] = useState([]);
+  const [ipAddress, setIpAddress] = useState("");
+  const [building, setBuilding] = useState("");
+  const [dateUpdated, setDateUpdated] = useState("");
+  const [department, setDepartment] = useState("");
+  const [macAddress, setMacAddress] = useState("");
+  const [model, setModel] = useState("");
+  const [name, setName] = useState("");
+  const [room, setRoom] = useState("");
+  const [serial, setSerial] = useState("");
   const ingredientInput = useRef(null);
   const history = useHistory();
 
@@ -17,11 +21,16 @@ export default function Create() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const recipe = {
-      ipaddress,
-      ingredients,
-      method,
-      cookingTime,
+    const printer = {
+      id: ipAddress,
+      building,
+      dateUpdated,
+      department,
+      macAddress,
+      model,
+      name,
+      room,
+      serial,
     };
     try {
       await db.collection("recipes").add(recipe);
@@ -47,7 +56,7 @@ export default function Create() {
 
   return (
     <div className={`create ${mode}`}>
-      <h2 className="page-title">Add a New Recipe</h2>
+      <h2 className="page-title">Add a Printer</h2>
 
       <form onSubmit={handleSubmit}>
         <label>
