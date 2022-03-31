@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import ThemeSelector from "./components/ThemeSelector";
 import Create from "./pages/create/Create";
 import Home from "./pages/home/Home";
-import Recipe from "./pages/recipe/Printer";
+import Printer from "./pages/printer/Printer";
 import Search from "./pages/search/Search";
 import "./App.css";
 
@@ -26,8 +26,8 @@ function App() {
           <Route path="/search">
             <Search />
           </Route>
-          <Route path="/printer/:id">
-            <Recipe />
+          <Route path="/printers/:id">
+            <Printer />
           </Route>
         </Switch>
       </BrowserRouter>

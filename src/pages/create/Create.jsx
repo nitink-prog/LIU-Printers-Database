@@ -5,7 +5,7 @@ import { useTheme } from "../../hooks/useTheme";
 import "./Create.css";
 
 export default function Create() {
-  const [title, setTitle] = useState("");
+  const [ipaddress, setIpaddress] = useState("");
   const [method, setMethod] = useState("");
   const [cookingTime, setCookingTime] = useState(0);
   const [newIngredient, setNewIngredient] = useState("");
@@ -18,7 +18,7 @@ export default function Create() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const recipe = {
-      title,
+      ipaddress,
       ingredients,
       method,
       cookingTime,
@@ -54,8 +54,8 @@ export default function Create() {
           <span>Recipe title:</span>
           <input
             type="text"
-            onChange={(e) => setTitle(e.target.value)}
-            value={title}
+            onChange={(e) => setIpaddress(e.target.value)}
+            value={ipaddress}
             required
           />
         </label>

@@ -30,9 +30,21 @@
 .recipe li:last-child::after {
   content: ".";
 }
-.method {
+
+.printer-table {
+  margin: auto;
+  border: 1px solid #C0C0C0;
+  border-collapse: collapse;
+  padding: 5px;
   text-align: left;
-  line-height: 1.5em;
+}
+.printer-table th {
+  border: 1px solid #C0C0C0;
+  padding: 5px;
+}
+.printer-table td {
+  border: 1px solid #C0C0C0;
+  padding: 5px;
 }
 
 /* dark mode */
