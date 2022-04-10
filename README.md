@@ -1,6 +1,6 @@
-# Recipe Directory - Firebase Version
+# LIU Printers Database - Firebase Version
 
-A React app that displays a list of recipes pulled from a Firebase Firestore database. Combines many React practices into a realistic webapp.
+A React app that displays a list of printers on Long Island University's Brooklyn Campus pulled from a Firebase Firestore database. Combines many React practices into a webapp for the IT Department to utilize.
 
 ## Studies
 
@@ -33,12 +33,18 @@ A React app that displays a list of recipes pulled from a Firebase Firestore dat
 
 - Separation of pages and components.
   - `<Navbar />` is always rendered, with components rendered underneath depending on current route.
-  - `<Recipe />` component is reused.
+  - `<Printer />` component is reused.
 - Passing children templates.
 
 ## Upcoming Features
 
-- Form for updating document (recipe) data
+- "Copy IP to Clipboard" button.
+- Add a "Confirm" prompt when deleting a printer.
+- Update the styling on "Building" dropdown on the "Add Printer" page.
+- "Submit" button should not be touching the bottom the "Add Printer" page.
+- Add placeholders within the input fields on "Add Printer" page.
+- Add breadcrumbs as we navigate through page routes.
+- Move "Delete" button onto the "Details" page.
 
 ## Outline
 
@@ -65,8 +71,8 @@ A React app that displays a list of recipes pulled from a Firebase Firestore dat
     ├── components
     │   ├── Navbar.css
     │   ├── Navbar.jsx
-    │   ├── RecipeList.css
-    │   ├── RecipeList.jsx
+    │   ├── PrinterList.css
+    │   ├── PrinterList.jsx
     │   ├── Searchbar.css
     │   ├── Searchbar.jsx
     │   ├── ThemeSelector.css
@@ -85,9 +91,9 @@ A React app that displays a list of recipes pulled from a Firebase Firestore dat
         ├── home
         │   ├── Home.css
         │   └── Home.jsx
-        ├── recipe
-        │   ├── Recipe.css
-        │   └── Recipe.jsx
+        ├── printer
+        │   ├── Printer.css
+        │   └── Printer.jsx
         └── search
             ├── Search.css
             └── Search.jsx
