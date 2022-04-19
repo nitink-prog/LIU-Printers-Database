@@ -7,8 +7,10 @@ import Home from "./pages/home/Home";
 import Printer from "./pages/printer/Printer";
 import Search from "./pages/search/Search";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [showTheme, setShowTheme] = useState(true);
   const { mode } = useTheme();
 
   return (
