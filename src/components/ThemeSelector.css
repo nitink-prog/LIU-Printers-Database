@@ -16,10 +16,17 @@
   border: 1px solid #555;
 }
 .mode-toggle {
+  transition: all ease-in 0.3s;
   padding-top: 2px;
 }
 .mode-toggle img {
+  transition: all ease-in 0.3s;
+  filter: invert(10%);
   width: 24px;
   height: 24px;
   cursor: pointer;
+}
+
+.mode-toggle.dark {
+  filter: invert(90%);
 }
