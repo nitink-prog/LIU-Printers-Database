@@ -2,9 +2,9 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  max-width: 1200px;
-  margin: 20px auto;
-  padding-right: 20px;
+  max-width: 250px;
+  margin: 10px;
+  padding-right: 0px;
 }
 .theme-buttons div {
   display: inline-block;
@@ -17,16 +17,17 @@
 }
 .mode-toggle {
   transition: all ease-in 0.3s;
+  margin-left: 15px;
   padding-top: 2px;
+  filter: invert(90%);
 }
 .mode-toggle img {
   transition: all ease-in 0.3s;
-  filter: invert(10%);
   width: 24px;
   height: 24px;
   cursor: pointer;
 }
 
 .mode-toggle.dark {
-  filter: invert(90%);
+  filter: invert(10%);
 }
