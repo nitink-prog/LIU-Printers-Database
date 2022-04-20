@@ -17,7 +17,6 @@ function App() {
     <div className={`App ${mode}`}>
       <BrowserRouter>
         <Navbar />
-        <ThemeSelector />
         <Switch>
           <Route exact path="/">
             <Home />
