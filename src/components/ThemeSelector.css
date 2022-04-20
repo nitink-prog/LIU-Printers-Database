@@ -3,8 +3,6 @@
   justify-content: flex-end;
   align-items: center;
   max-width: 250px;
-  margin: 10px;
-  padding-right: 0px;
 }
 .theme-buttons div {
   display: inline-block;
