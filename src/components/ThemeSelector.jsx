@@ -18,13 +18,8 @@ export default function ThemeSelector() {
 
   return (
     <div className="theme-selector">
-      <div className="mode-toggle">
-        <img
-          src={darkModeIcon}
-          alt="Dark Mode toggle"
-          onClick={toggleMode}
-          style={{ filter: mode === "dark" ? "invert(90%)" : "invert(10%)" }}
-        />
+      <div className={`mode-toggle ${mode}`}>
+        <img src={darkModeIcon} alt="Dark Mode toggle" onClick={toggleMode} />
       </div>
       <div className="theme-buttons">
         {themeColors.map((color) => (
