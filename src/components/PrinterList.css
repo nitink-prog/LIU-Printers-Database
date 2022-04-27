@@ -3,7 +3,7 @@
   display: block;
   gap: 40px 40px;
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 20px auto;
 }
 .recipe-list .card {
   transition: all 0.3s ease-in;
