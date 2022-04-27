@@ -5,7 +5,7 @@ import deleteIcon from "../assets/delete-icon.svg";
 import "./PrinterList.css";
 
 export default function RecipeList({ printers }) {
-  const { mode } = useTheme();
+  const { mode, color } = useTheme();
 
   if (printers.length === 0) {
     return <div className="error">No printers found...</div>;
@@ -22,16 +22,19 @@ export default function RecipeList({ printers }) {
   return (
     <div className="recipe-list">
       {printers.map((printer) => (
-        <div key={printer.id} className={`card ${mode}`}>
-          <h3>172.18.111.{printer.id}</h3>
-          <p>
-            {printer.building} {printer.room}
-          </p>
+        <div
+          key={printer.id}
+          className={`card ${mode}`}
+          style={{ outlineColor: color }}>
           <div>
+            <h3>172.18.111.{printer.id}</h3>
+            <p>
+              {printer.building} {printer.room}
+            </p>
             <p>{printer.department} Dept.</p>
             <p>iR-ADV {printer.model}</p>
+            <Link to={`/printers/${printer.id}`}>Details</Link>
           </div>
-          <Link to={`/printers/${printer.id}`}>Details</Link>
           <img
             className="delete"
             src={deleteIcon}
