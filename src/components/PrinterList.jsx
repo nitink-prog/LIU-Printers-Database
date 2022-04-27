@@ -26,15 +26,15 @@ export default function RecipeList({ printers }) {
           key={printer.id}
           className={`card ${mode}`}
           style={{ outlineColor: color }}>
-          <h3>172.18.111.{printer.id}</h3>
-          <p>
-            {printer.building} {printer.room}
-          </p>
           <div>
+            <h3>172.18.111.{printer.id}</h3>
+            <p>
+              {printer.building} {printer.room}
+            </p>
             <p>{printer.department} Dept.</p>
             <p>iR-ADV {printer.model}</p>
+            <Link to={`/printers/${printer.id}`}>Details</Link>
           </div>
-          <Link to={`/printers/${printer.id}`}>Details</Link>
           <img
             className="delete"
             src={deleteIcon}

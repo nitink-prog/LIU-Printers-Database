@@ -9,7 +9,6 @@
   transition: all 0.3s ease-in;
   background: white;
   color: darkgray;
-  padding: 12px;
   border-radius: 4px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -21,37 +20,35 @@
   outline-width: 2px;
 }
 .recipe-list .card h3 {
-  display: inline;
-  padding-right: 20px;
+  font-size: 1.5em;
   transition: all 0.3s ease-in;
   color: #222;
-  margin-bottom: 6px;
 }
 .recipe-list .card p {
-  display: inline;
-  padding-right: 10px;
   transition: all 0.3s ease-in;
   color: dimgray;
   font-size: 0.9em;
 }
 .recipe-list .card div {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
   transition: all 0.3s ease-in;
   color: dimgray;
   font-size: 0.7em;
-  margin: 20px 0;
-  line-height: 1.5em;
+  padding: 0px 25px;
 }
 .recipe-list .card a {
   transition: all 0.3s ease-in;
   color: dimgray;
   text-decoration: none;
-  display: inline-block;
   position: relative;
+  padding: 10px 20px;
   float: none;
   background: whitesmoke;
   font-size: 0.9em;
   text-align: center;
-  padding: 8px;
   border-radius: 4px;
 }
 .delete {
