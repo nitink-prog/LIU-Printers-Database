@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { db } from "../../firebase/config";
 import { useTheme } from "../../hooks/useTheme";
@@ -14,7 +14,7 @@ export default function Create() {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   const [serial, setSerial] = useState("");
-  const ingredientInput = useRef(null);
+  
   const history = useHistory();
 
   const { mode, color } = useTheme();
