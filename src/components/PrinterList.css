@@ -27,7 +27,7 @@
 .recipe-list .card p {
   transition: all 0.3s ease-in;
   color: dimgray;
-  font-size: 0.9em;
+  font-size: 1.1em;
 }
 .recipe-list .card div {
   display: flex;
@@ -47,7 +47,7 @@
   padding: 10px 20px;
   float: none;
   background: whitesmoke;
-  font-size: 0.9em;
+  font-size: 1.1em;
   text-align: center;
   border-radius: 4px;
 }
