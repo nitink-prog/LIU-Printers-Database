@@ -11,8 +11,6 @@ export default function Home() {
     error,
   } = useFetch("http://localhost:3008/printers");
 
-  console.log(printers);
-
   return (
     <div className="home">
       {error && <p className="error">{error}</p>}

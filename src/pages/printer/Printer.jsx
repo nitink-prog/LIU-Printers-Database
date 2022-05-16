@@ -1,35 +1,21 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useFetch } from "../../hooks/useFetch";
 import { db } from "../../firebase/config";
 import { useTheme } from "../../hooks/useTheme";
 import "./Printer.css";
 
 export default function Printer() {
-  const [printer, setPrinter] = useState(null);
-  const [isPending, setIsPending] = useState(false);
-  const [error, setError] = useState(false);
-
   const { id } = useParams();
   const { mode } = useTheme();
 
-  useEffect(() => {
-    setIsPending(true);
-    const unSubscribe = db
-      .collection("printers")
-      .doc(id)
-      .onSnapshot((doc) => {
-        if (doc.exists) {
-          setPrinter(doc.data());
-          setIsPending(false);
-        } else {
-          setIsPending(false);
-          setError("Could not find that printer.");
-        }
-      });
-    // Clean-up function: unsubscribe from the listener above when <Recipe /> unmounts
-    // prevents this useEffect from running when we're on a different page
-    return () => unSubscribe();
-  }, [id]);
+  let {
+    data: printer,
+    isPending,
+    error,
+  } = useFetch(`http://localhost:3008/printers/${id}`);
+
+  console.log(printer);
 
   const handleClickEdit = () => {
     // TODO: add edit logic
@@ -48,16 +34,16 @@ export default function Printer() {
               <tr>
                 <td>Location</td>
                 <td>
-                  {printer.building} {printer.room}
+                  {printer[0].building} {printer[0].room}
                 </td>
               </tr>
               <tr>
                 <td>Department</td>
-                <td>{printer.department}</td>
+                <td>{printer[0].department}</td>
               </tr>
               <tr>
                 <td>Model</td>
-                <td>Canon iR-ADV {printer.model}</td>
+                <td>Canon iR-ADV {printer[0].model}</td>
               </tr>
             </tbody>
           </table>
@@ -67,19 +53,19 @@ export default function Printer() {
             <tbody>
               <tr>
                 <td>Name</td>
-                <td>{printer.name}</td>
+                <td>{printer[0].name}</td>
               </tr>
               <tr>
                 <td>MAC Address</td>
-                <td>{printer.macAddress}</td>
+                <td>{printer[0].mac_address}</td>
               </tr>
               <tr>
                 <td>Serial</td>
-                <td>{printer.serial}</td>
+                <td>{printer[0].serial}</td>
               </tr>
               <tr>
                 <td>Date Updated</td>
-                <td>{printer.dateUpdated}</td>
+                <td>{printer[0].date_updated}</td>
               </tr>
             </tbody>
           </table>
