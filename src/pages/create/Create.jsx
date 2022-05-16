@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { db } from "../../firebase/config";
+import { useFetch } from "../../hooks/useFetch";
 import { useTheme } from "../../hooks/useTheme";
 import "./Create.css";
 
 export default function Create() {
-  const [ipAddress, setIpAddress] = useState("");
+  const [id, setId] = useState("");
   const [building, setBuilding] = useState("");
   const [dateUpdated, setDateUpdated] = useState("");
   const [department, setDepartment] = useState("");
@@ -14,30 +15,35 @@ export default function Create() {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   const [serial, setSerial] = useState("");
-  
+
   const history = useHistory();
 
   const { mode, color } = useTheme();
 
+  const { postData, data, error } = useFetch(
+    "http://localhost:3008/printers",
+    "POST"
+  );
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const printer = {
+      id,
       building,
-      dateUpdated,
+      date_updated: dateUpdated,
       department,
-      macAddress,
+      mac_address: macAddress,
       model,
       name,
       room,
       serial,
     };
-    try {
-      await db.collection("printers").doc(ipAddress).set(printer);
-      history.push("/");
-    } catch (err) {
-      console.log(err);
-    }
+    postData(printer);
   };
+
+  useEffect(() => {
+    if (data) history.push("/");
+  }, [data]);
 
   return (
     <div className={`create ${mode}`}>
@@ -51,8 +57,8 @@ export default function Create() {
             type="number"
             min="100"
             max="255"
-            onChange={(e) => setIpAddress(e.target.value)}
-            value={ipAddress}
+            onChange={(e) => setId(e.target.value)}
+            value={id}
           />
         </label>
 
