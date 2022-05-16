@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
 import PrinterList from "../../components/PrinterList";
-import { db } from "../../firebase/config";
 import { useFetch } from "../../hooks/useFetch";
 import "./Home.css";
 
