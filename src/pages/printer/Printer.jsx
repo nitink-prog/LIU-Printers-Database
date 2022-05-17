@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import { db } from "../../firebase/config";
 import { useTheme } from "../../hooks/useTheme";
+
+import deleteIcon from "../../assets/delete-icon.svg";
 import "./Printer.css";
 
 export default function Printer() {
@@ -17,6 +19,10 @@ export default function Printer() {
 
   console.log(printer);
 
+  const handleClickDelete = (id) => {
+    db.collection("printers").doc(id).delete();
+  };
+
   const handleClickEdit = () => {
     // TODO: add edit logic
   };
@@ -29,6 +35,12 @@ export default function Printer() {
       {printer && (
         <>
           <h2 className="page-title">172.18.111.{id}</h2>
+          <img
+            className="delete"
+            src={deleteIcon}
+            alt="delete icon"
+            onClick={() => handleClickDelete(printer.id)}
+          />
           <table className="printer-table">
             <tbody>
               <tr>

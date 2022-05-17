@@ -33,18 +33,26 @@
 
 .printer-table {
   margin: auto;
-  border: 1px solid #C0C0C0;
+  border: 1px solid #c0c0c0;
   border-collapse: collapse;
   padding: 5px;
   text-align: left;
 }
 .printer-table th {
-  border: 1px solid #C0C0C0;
+  border: 1px solid #c0c0c0;
   padding: 5px;
 }
 .printer-table td {
-  border: 1px solid #C0C0C0;
+  border: 1px solid #c0c0c0;
   padding: 5px;
+}
+
+.delete {
+  position: relative;
+  top: -120px;
+  right: -380px;
+  cursor: pointer;
+  filter: invert(60%);
 }
 
 /* dark mode */

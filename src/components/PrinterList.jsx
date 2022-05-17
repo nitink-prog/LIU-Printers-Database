@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
 import { db } from "../firebase/config";
-import deleteIcon from "../assets/delete-icon.svg";
 import "./PrinterList.css";
 
 export default function RecipeList({ printers }) {
@@ -11,9 +10,7 @@ export default function RecipeList({ printers }) {
     return <div className="error">No printers found...</div>;
   }
 
-  const handleClickDelete = (id) => {
-    db.collection("printers").doc(id).delete();
-  };
+
 
   const handleClickLog = () => {
     console.log(printers);
@@ -35,12 +32,6 @@ export default function RecipeList({ printers }) {
             <p>iR-ADV {printer.model}</p>
             <Link to={`/printers/${printer.id}`}>Details</Link>
           </div>
-          <img
-            className="delete"
-            src={deleteIcon}
-            alt="delete icon"
-            onClick={() => handleClickDelete(printer.id)}
-          />
         </div>
       ))}
       <button onClick={handleClickLog}>Log printers</button>
