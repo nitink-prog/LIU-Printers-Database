@@ -4,7 +4,7 @@ A React app that displays a list of printers on Long Island University's Brookly
 
 Combines many React practices into a webapp for the IT Department to utilize.
 
-==This is the 3rd version of this full-stack program.== Firebase and JSON-Server versions are in the branches.
+**This is the 3rd version of this full-stack program.** Firebase and JSON-Server versions are in the branches.
 
 ## Studies
 
