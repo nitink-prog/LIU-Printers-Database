@@ -1,40 +1,55 @@
-# LIU Printers Database - Firebase Version
+# LIU Printers Database - MySQL Version
 
-A React app that displays a list of printers on Long Island University's Brooklyn Campus pulled from a Firebase Firestore database. Combines many React practices into a webapp for the IT Department to utilize.
+A React app that displays a list of printers on Long Island University's Brooklyn Campus pulled from a MySQL database. 
+
+Combines many React practices into a webapp for the IT Department to utilize.
+
+==This is the 3rd version of this full-stack program.== Firebase and JSON-Server versions are in the branches.
 
 ## Studies
 
-### React Hooks
+MySQL, Express, React, Node Stack (MyERN?)
+MySQL is running in XAMPP which is an extended version of LAMP.
+
+### React Paradigms
 
 - useState
 - useEffect
 - useRef
-
-### React Router Hooks
-
 - useParams
 - useHistory
-
-### Firebase Firestore Database
-
-- Connection to cloud stored backend database.
-- Efficient configuration of database.
-- Pulling real-time data and handling errors.
-  - Changes to any recipe are instantly reflected in the Home page and the Recipe page.
-- Search for recipes in the directory.
-
-### APIs
-
-- Handling returned data safely with Loading state and Error handling.
-- Mapping data for visually appealing table display.
-- Dropdown menu for displaying data based on particular building.
-
-### Component Tree
-
 - Separation of pages and components.
   - `<Navbar />` is always rendered, with components rendered underneath depending on current route.
   - `<Printer />` component is reused.
-- Passing children templates.
+  - Passing children templates.
+- React Context and React Reducer to manage the global state of the theme (Dark mode and color).
+
+###  MySQL Database
+
+- Connection to MySQL database running in XAMPP - virtualized Linux environment.
+- Efficient configuration of database.
+  - Using PhpMyAdmin to create a structure for the database
+- Handling returned data safely with Loading state and Error handling.
+- Search for printers in the directory.
+
+### Express Middleware
+This front-end application communicates with the back-end through Express middleware. 
+I've made that available on GitHub as well: [LIU Printers MySQL Express Server](https://github.com/nitink-prog/LIU-Printers-MySQL-Express-Server)
+
+- Set up API endpoints corresponding to printers in the database
+- Allow CORS requests.
+- Set up HTTP methods to POST new printers, GET full database or single printer, PATCH and DELETE.
+
+### Visuals
+
+- Mapping data for visually appealing table display.
+- User selection for Dark or Light Mode, and Color that apply to Navbar and all buttons.
+  - Using dynamic styles.
+- Animated outline when hovering over a printer in the table.
+
+### Component Tree
+
+
 
 ## Upcoming Features
 
