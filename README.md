@@ -1,6 +1,6 @@
 # LIU Printers Database - MySQL Version
 
-A React app that displays a list of printers on Long Island University's Brooklyn Campus pulled from a MySQL database. 
+A full stack React app that displays a list of printers on Long Island University's Brooklyn Campus pulled from a MySQL database. For obvious reasons, the printer database is not included.
 
 Combines many React practices into a webapp for the IT Department to utilize.
 
