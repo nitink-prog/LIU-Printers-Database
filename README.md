@@ -8,8 +8,7 @@ Combines many React practices into a webapp for the IT Department to utilize.
 
 ## Studies
 
-MySQL, Express, React, Node Stack (MyERN?)
-MySQL is running in XAMPP which is an extended version of LAMP.
+MySQL, Express, React, Node Stack (MyERN?).
 
 ### React Paradigms
 
