@@ -27,7 +27,7 @@ MySQL, Express, React, Node Stack (MyERN?).
 
 - Connection to MySQL database running in XAMPP - virtualized Linux environment.
 - Efficient configuration of database.
-  - Using PhpMyAdmin to create a structure for the database
+  - Using PhpMyAdmin to create a structure for the database.
 - Handling returned data safely with Loading state and Error handling.
 - Search for printers in the directory.
 
@@ -35,7 +35,7 @@ MySQL, Express, React, Node Stack (MyERN?).
 This front-end application communicates with the back-end through Express middleware. 
 I've made that available on GitHub as well: [LIU Printers MySQL Express Server](https://github.com/nitink-prog/LIU-Printers-MySQL-Express-Server)
 
-- Set up API endpoints corresponding to printers in the database
+- Set up API endpoints corresponding to printers in the database.
 - Allow CORS requests.
 - Set up HTTP methods to POST new printers, GET full database or single printer, PATCH and DELETE.
 
@@ -46,19 +46,21 @@ I've made that available on GitHub as well: [LIU Printers MySQL Express Server](
   - Using dynamic styles.
 - Animated outline when hovering over a printer in the table.
 
-### Component Tree
-
-
-
 ## Upcoming Features
 
-- "Copy IP to Clipboard" button.
-- Add a "Confirm" prompt when deleting a printer.
-- Update the styling on "Building" dropdown on the "Add Printer" page.
-- "Submit" button should not be touching the bottom the "Add Printer" page.
-- Add placeholders within the input fields on "Add Printer" page.
-- Add breadcrumbs as we navigate through page routes.
-- Move "Delete" button onto the "Details" page.
+[ ] "Copy IP to Clipboard" button.
+
+[ ] Add a "Confirm" prompt when deleting a printer.
+
+[ ] Update the styling on "Building" dropdown on the "Add Printer" page.
+
+[ ] "Submit" button should not be touching the bottom the "Add Printer" page.
+
+[ ] Add placeholders within the input fields on "Add Printer" page.
+
+[ ] Add breadcrumbs as we navigate through page routes.
+
+[X] Move "Delete" button onto the "Details" page.
 
 ## Outline
 
