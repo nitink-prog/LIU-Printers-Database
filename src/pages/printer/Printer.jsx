@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
-import { db } from "../../firebase/config";
 import { useTheme } from "../../hooks/useTheme";
 
 import deleteIcon from "../../assets/delete-icon.svg";
@@ -9,18 +7,20 @@ import "./Printer.css";
 
 export default function Printer() {
   const { id } = useParams();
+  const history = useHistory();
   const { mode } = useTheme();
+  const printerURL = `http://localhost:3008/printers/${id}`;
 
-  let {
-    data: printer,
-    isPending,
-    error,
-  } = useFetch(`http://localhost:3008/printers/${id}`);
+  let { data: printer, isPending, error } = useFetch(printerURL);
+  let { deleteData } = useFetch(printerURL, "DELETE");
 
   console.log(printer);
 
-  const handleClickDelete = (id) => {
-    db.collection("printers").doc(id).delete();
+  const handleClickDelete = () => {
+    deleteData();
+    setTimeout(() => {
+      history.push("/");
+    }, 100);
   };
 
   const handleClickEdit = () => {
