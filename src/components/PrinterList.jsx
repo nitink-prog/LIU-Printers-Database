@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
-import { db } from "../firebase/config";
 import "./PrinterList.css";
 
 export default function RecipeList({ printers }) {
@@ -9,8 +8,6 @@ export default function RecipeList({ printers }) {
   if (printers.length === 0) {
     return <div className="error">No printers found...</div>;
   }
-
-
 
   const handleClickLog = () => {
     console.log(printers);
