@@ -6,6 +6,17 @@ Combines many React practices into a webapp for the IT Department to utilize.
 
 **This is the 3rd version of this full-stack program.** Firebase and JSON-Server versions are in the branches.
 
+## Screenshots
+
+### Main Page
+<img width="1500" alt="Screen Shot 2022-08-03 at 10 56 31 AM" src="https://user-images.githubusercontent.com/80429955/182640900-a592fe9a-71cc-4b6b-8aa6-7c41155e9cab.png">
+
+### Printer Details Page
+<img width="1500" alt="Screen Shot 2022-08-03 at 10 58 08 AM" src="https://user-images.githubusercontent.com/80429955/182641016-c5aa38f1-9fa6-416f-b228-e8f6e832d149.png">
+
+### Add Printer Page
+<img width="1500" alt="Screen Shot 2022-08-03 at 11 00 11 AM" src="https://user-images.githubusercontent.com/80429955/182641271-f2194829-f609-46d4-97d8-935776481f10.png">
+
 ## Studies
 
 MySQL, Express, React, Node Stack (MyERN?).
